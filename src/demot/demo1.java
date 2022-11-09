@@ -16,8 +16,21 @@ public class demo1 {
 	 * @param t tutkittava taulukko
 	 * @param etsittava jakava numero
 	 * @return montako jakavaa löytyy
+	 * @example
+     * <pre name="test">
+     * int[] t = new int[]{1, 2, 3, 4, 5};
+     * montakoEsiintymaa(t, 1) === 5;
+     * montakoEsiintymaa(t, 2) === 2;
+     * montakoEsiintymaa(t, 3) === 1;
+     * montakoEsiintymaa(t, 0) === -1;
+     * int[] t1 = new int[0];
+     * montakoEsiintymaa(t1, 3) === -1;
+     * 
+     * </pre>
 	 */
 	public static int montakoEsiintymaa(int[] t, int etsittava) {
+		if (etsittava == 0) return -1;
+		if (t.length == 0) return -1;
 		int montako = 0;
 		for (int i = 0; i < t.length; i++) {
 			if (t[i] % etsittava == 0) {
